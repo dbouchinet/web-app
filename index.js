@@ -45,14 +45,6 @@ app.use(
  })
 );
 
-app.use(
- auth({
-   secret: SESSION_SECRET,
-   auth0Logout: true,
-   baseURL: APP_URL,
- })
-);
-
 app.get("/", async (req, res) => {
  try {
    const summary = await axios.get(`${API_URL}/total`);
